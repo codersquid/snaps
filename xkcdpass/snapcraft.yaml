@@ -1,0 +1,20 @@
+name: xkcdpass-codersquid
+version: 0.1
+summary: Generate secure multiword passwords/passphrases, inspired by XKCD
+description: |
+  A flexible and scriptable password generator which generates strong
+  passphrases, inspired by XKCD 936.
+
+  $ xkcdpass
+  > correct horse battery staple
+
+confinement: strict
+
+apps:
+  xkcdpass:
+    command: usr/bin/python3 $SNAP/usr/bin/xkcdpass
+
+parts:
+  xkcdpass:
+    source: https://github.com/redacted/XKCD-password-generator.git
+    plugin: python3
